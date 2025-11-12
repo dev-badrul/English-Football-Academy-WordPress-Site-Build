@@ -1,0 +1,1317 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head><script src="https://static.readdy.ai/static/e.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kick Off Football Academy - Professional Football Training</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+<style>
+:where([class^="ri-"])::before {
+content: "\f3c2";
+}
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+body {
+font-family: 'Inter', sans-serif;
+line-height: 1.6;
+color: #1a1a1a;
+background: #ffffff;
+}
+.container {
+max-width: 1200px;
+margin: 0 auto;
+padding: 0 1rem;
+}
+.header {
+position: fixed;
+top: 0;
+left: 0;
+right: 0;
+background: rgba(255, 255, 255, 0.95);
+backdrop-filter: blur(10px);
+z-index: 1000;
+border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.nav {
+display: flex;
+align-items: center;
+justify-content: space-between;
+padding: 1rem 0;
+}
+.logo {
+width: 120px;
+height: 60px;
+background: url('https://i.postimg.cc/j5fP9hCM/log.png') center/contain no-repeat;
+}
+.nav-menu {
+display: flex;
+list-style: none;
+gap: 2rem;
+align-items: center;
+}
+.nav-link {
+text-decoration: none;
+color: #1a1a1a;
+font-weight: 500;
+font-size: 0.95rem;
+transition: color 0.3s ease;
+}
+.nav-link:hover {
+color: #dc2626;
+}
+.btn-primary {
+background: #dc2626;
+color: white;
+padding: 0.75rem 1.5rem;
+border: none;
+border-radius: 8px;
+font-weight: 600;
+text-decoration: none;
+display: inline-block;
+transition: all 0.3s ease;
+cursor: pointer;
+white-space: nowrap;
+}
+.btn-primary:hover {
+background: #b91c1c;
+transform: translateY(-2px);
+}
+.btn-secondary {
+background: transparent;
+color: #ffffff;
+padding: 0.75rem 1.5rem;
+border: 2px solid #1a1a1a;
+border-radius: 8px;
+font-weight: 600;
+text-decoration: none;
+display: inline-block;
+transition: all 0.3s ease;
+cursor: pointer;
+white-space: nowrap;
+}
+.btn-secondary:hover {
+background: #1a1a1a;
+color: white;
+}
+.mobile-menu-btn {
+display: none;
+background: none;
+border: none;
+font-size: 1.5rem;
+cursor: pointer;
+}
+.hero {
+position: relative;
+height: 100vh;
+min-height: 600px;
+display: flex;
+align-items: center;
+overflow: hidden;
+}
+.hero-video {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+object-fit: cover;
+z-index: -2;
+}
+.hero-overlay {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background: linear-gradient(135deg, rgba(220, 38, 38, 0.8) 0%, rgba(0, 0, 0, 0.6) 100%);
+z-index: -1;
+}
+.hero-content {
+color: white;
+max-width: 600px;
+z-index: 1;
+}
+.hero-title {
+font-size: 3.5rem;
+font-weight: 800;
+line-height: 1.1;
+margin-bottom: 1.5rem;
+}
+.hero-subtitle {
+font-size: 1.25rem;
+margin-bottom: 2rem;
+opacity: 0.9;
+}
+.hero-buttons {
+display: flex;
+gap: 1rem;
+flex-wrap: wrap;
+}
+.rotating-banner {
+position: absolute;
+bottom: 2rem;
+left: 50%;
+transform: translateX(-50%);
+background: rgba(255, 255, 255, 0.1);
+backdrop-filter: blur(10px);
+padding: 1rem 2rem;
+border-radius: 50px;
+color: white;
+font-weight: 500;
+}
+.section {
+padding: 5rem 0;
+}
+.section-title {
+font-size: 2.5rem;
+font-weight: 700;
+text-align: center;
+margin-bottom: 3rem;
+color: #1a1a1a;
+}
+.about-grid {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 4rem;
+align-items: center;
+}
+.about-image {
+width: 100%;
+height: 400px;
+border-radius: 12px;
+object-fit: cover;
+}
+.about-content h3 {
+font-size: 1.5rem;
+font-weight: 600;
+margin-bottom: 1rem;
+color: #dc2626;
+}
+.about-content p {
+margin-bottom: 1.5rem;
+color: #4a5568;
+line-height: 1.8;
+}
+.services-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+gap: 2rem;
+margin-top: 3rem;
+}
+.service-card {
+background: white;
+border-radius: 12px;
+overflow: hidden;
+box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.service-card:hover {
+transform: translateY(-5px);
+box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+.service-image {
+width: 100%;
+height: 200px;
+object-fit: cover;
+}
+.service-content {
+padding: 1.5rem;
+}
+.service-title {
+font-size: 1.25rem;
+font-weight: 600;
+margin-bottom: 0.5rem;
+}
+.service-description {
+color: #4a5568;
+margin-bottom: 1rem;
+}
+.service-price {
+font-size: 1.5rem;
+font-weight: 700;
+color: #dc2626;
+margin-bottom: 1rem;
+}
+.booking-section {
+background: #f8fafc;
+}
+.booking-container {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 3rem;
+align-items: start;
+}
+.booking-form {
+background: white;
+padding: 2rem;
+border-radius: 12px;
+box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+.form-group {
+margin-bottom: 1.5rem;
+}
+.form-label {
+display: block;
+margin-bottom: 0.5rem;
+font-weight: 500;
+}
+.form-input {
+width: 100%;
+padding: 0.75rem;
+border: 2px solid #e2e8f0;
+border-radius: 8px;
+font-size: 1rem;
+transition: border-color 0.3s ease;
+}
+.form-input:focus {
+outline: none;
+border-color: #dc2626;
+}
+.calendar-widget {
+background: white;
+padding: 2rem;
+border-radius: 12px;
+box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+.calendar-header {
+display: flex;
+justify-content: space-between;
+align-items: center;
+margin-bottom: 1rem;
+}
+.calendar-nav {
+background: none;
+border: none;
+font-size: 1.2rem;
+cursor: pointer;
+padding: 0.5rem;
+border-radius: 4px;
+}
+.calendar-nav:hover {
+background: #f1f5f9;
+}
+.calendar-grid {
+display: grid;
+grid-template-columns: repeat(7, 1fr);
+gap: 0.25rem;
+}
+.calendar-day {
+aspect-ratio: 1;
+display: flex;
+align-items: center;
+justify-content: center;
+border-radius: 4px;
+cursor: pointer;
+transition: all 0.3s ease;
+}
+.calendar-day:hover {
+background: #fee2e2;
+}
+.calendar-day.available {
+background: #dcfce7;
+color: #166534;
+}
+.calendar-day.selected {
+background: #dc2626;
+color: white;
+}
+.blog-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+gap: 2rem;
+margin-top: 3rem;
+}
+.blog-card {
+background: white;
+border-radius: 12px;
+overflow: hidden;
+box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+transition: transform 0.3s ease;
+}
+.blog-card:hover {
+transform: translateY(-3px);
+}
+.blog-image {
+width: 100%;
+height: 200px;
+object-fit: cover;
+}
+.blog-content {
+padding: 1.5rem;
+}
+.blog-category {
+color: #dc2626;
+font-size: 0.875rem;
+font-weight: 600;
+text-transform: uppercase;
+letter-spacing: 0.05em;
+}
+.blog-title {
+font-size: 1.25rem;
+font-weight: 600;
+margin: 0.5rem 0;
+line-height: 1.4;
+}
+.blog-excerpt {
+color: #4a5568;
+margin-bottom: 1rem;
+}
+.blog-meta {
+display: flex;
+justify-content: space-between;
+align-items: center;
+font-size: 0.875rem;
+color: #718096;
+}
+.shop-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+gap: 2rem;
+margin-top: 3rem;
+}
+.product-card {
+background: white;
+border-radius: 12px;
+overflow: hidden;
+box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+transition: transform 0.3s ease;
+}
+.product-card:hover {
+transform: translateY(-3px);
+}
+.product-image {
+width: 100%;
+height: 250px;
+object-fit: cover;
+}
+.product-content {
+padding: 1.5rem;
+}
+.product-title {
+font-size: 1.125rem;
+font-weight: 600;
+margin-bottom: 0.5rem;
+}
+.product-price {
+font-size: 1.25rem;
+font-weight: 700;
+color: #dc2626;
+margin-bottom: 1rem;
+}
+.testimonials-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+gap: 2rem;
+margin-top: 3rem;
+}
+.testimonial-card {
+background: white;
+padding: 2rem;
+border-radius: 12px;
+box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+text-align: center;
+}
+.testimonial-avatar {
+width: 80px;
+height: 80px;
+border-radius: 50%;
+object-fit: cover;
+margin: 0 auto 1rem;
+}
+.testimonial-quote {
+font-style: italic;
+margin-bottom: 1rem;
+color: #4a5568;
+line-height: 1.6;
+}
+.testimonial-author {
+font-weight: 600;
+color: #1a1a1a;
+}
+.testimonial-role {
+color: #718096;
+font-size: 0.875rem;
+}
+.contact-section {
+background: #f8fafc;
+}
+.contact-grid {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 4rem;
+}
+.contact-info {
+display: flex;
+flex-direction: column;
+gap: 2rem;
+}
+.contact-item {
+display: flex;
+align-items: center;
+gap: 1rem;
+}
+.contact-icon {
+width: 3rem;
+height: 3rem;
+background: #dc2626;
+color: white;
+border-radius: 50%;
+display: flex;
+align-items: center;
+justify-content: center;
+font-size: 1.25rem;
+}
+.contact-form {
+background: white;
+padding: 2rem;
+border-radius: 12px;
+box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+.whatsapp-btn {
+position: fixed;
+bottom: 2rem;
+right: 2rem;
+width: 60px;
+height: 60px;
+background: #25d366;
+border-radius: 50%;
+display: flex;
+align-items: center;
+justify-content: center;
+color: white;
+font-size: 1.5rem;
+text-decoration: none;
+box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+z-index: 1000;
+transition: transform 0.3s ease;
+}
+.whatsapp-btn:hover {
+transform: scale(1.1);
+}
+.footer {
+background: #1a1a1a;
+color: white;
+padding: 3rem 0 1rem;
+}
+.footer-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+gap: 2rem;
+margin-bottom: 2rem;
+}
+.footer-section h4 {
+font-size: 1.125rem;
+font-weight: 600;
+margin-bottom: 1rem;
+}
+.footer-links {
+list-style: none;
+}
+.footer-links li {
+margin-bottom: 0.5rem;
+}
+.footer-links a {
+color: #cbd5e0;
+text-decoration: none;
+transition: color 0.3s ease;
+}
+.footer-links a:hover {
+color: white;
+}
+.footer-bottom {
+border-top: 1px solid #2d3748;
+padding-top: 1rem;
+text-align: center;
+color: #cbd5e0;
+}
+.social-links {
+display: flex;
+gap: 1rem;
+margin-top: 1rem;
+}
+.social-link {
+width: 40px;
+height: 40px;
+background: #2d3748;
+border-radius: 50%;
+display: flex;
+align-items: center;
+justify-content: center;
+color: white;
+text-decoration: none;
+transition: background 0.3s ease;
+}
+.social-link:hover {
+background: #dc2626;
+}
+@media (max-width: 768px) {
+.nav-menu {
+display: none;
+position: absolute;
+top: 100%;
+left: 0;
+right: 0;
+background: white;
+flex-direction: column;
+padding: 1rem;
+box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+.nav-menu.active {
+display: flex;
+}
+.mobile-menu-btn {
+display: block;
+}
+.hero-title {
+font-size: 2.5rem;
+}
+.about-grid,
+.booking-container,
+.contact-grid {
+grid-template-columns: 1fr;
+gap: 2rem;
+}
+.services-grid,
+.blog-grid,
+.shop-grid,
+.testimonials-grid {
+grid-template-columns: 1fr;
+}
+.hero-buttons {
+flex-direction: column;
+}
+}
+</style>
+</head>
+<body>
+<header class="header">
+<nav class="nav container">
+<div class="logo"></div>
+<ul class="nav-menu" id="navMenu">
+<li><a href="#about" class="nav-link">About Kick Off</a></li>
+<li><a href="#services" class="nav-link">Our Services</a></li>
+<li><a href="#blog" class="nav-link">Latest News & Tips</a></li>
+<li><a href="#shop" class="nav-link">Kick Off Shop</a></li>
+<li><a href="#testimonials" class="nav-link">Success Stories</a></li>
+<li><a href="#contact" class="nav-link">Get In Touch</a></li>
+<li><a href="#booking" class="btn-primary">Book Now</a></li>
+</ul>
+<button class="mobile-menu-btn" id="mobileMenuBtn">
+<i class="ri-menu-line"></i>
+</button>
+</nav>
+</header>
+<section class="hero">
+<div class="hero-video" style="background-image: url('https://readdy.ai/api/search-image?query=epic%20football%20stadium%20aerial%20view%20professional%20grass%20pitch%20under%20dramatic%20evening%20sky%20lights%20inspiring%20sports%20venue%20championship%20atmosphere&width=1920&height=1080&seq=hero002&orientation=landscape'); background-size: cover; background-position: center;"></div>
+<div class="hero-overlay"></div>
+<div class="container">
+<div class="hero-content">
+<h1 class="hero-title">Elevate Your Football Skills</h1>
+<p class="hero-subtitle">Join the premier football academy where champions are made. Professional coaching, state-of-the-art facilities, and a pathway to excellence.</p>
+<div class="hero-buttons">
+<a href="#booking" class="btn-primary">Start Your Journey</a>
+<a href="#about" class="btn-secondary">Learn More</a>
+</div>
+</div>
+</div>
+<div class="rotating-banner" id="rotatingBanner">
+Professional Coaching • Modern Facilities • Proven Results
+</div>
+</section>
+<section id="about" class="section">
+<div class="container">
+<h2 class="section-title">About Kick Off Academy</h2>
+<div class="about-grid">
+<div class="about-content">
+<h3>Where Football Dreams Come True</h3>
+<p>At Kick Off Football Academy, we believe every player has the potential to achieve greatness. Our world-class coaching staff, led by former professional players, provides personalized training programs designed to develop technical skills, tactical awareness, and mental resilience.</p>
+<p>Since our establishment in 2018, we've helped over 500 young athletes reach their full potential, with many progressing to professional clubs and university scholarships. Our holistic approach combines technical excellence with character development.</p>
+<p>Our state-of-the-art facilities include FIFA-standard pitches, modern training equipment, and video analysis technology to ensure every session maximizes player development.</p>
+<a href="#services" class="btn-primary">Explore Our Programs</a>
+</div>
+<img src="https://readdy.ai/api/search-image?query=modern%20football%20academy%20training%20facility%20with%20young%20players%20and%20professional%20coaches%20on%20pristine%20grass%20field%20high%20quality%20sports%20photography&width=600&height=400&seq=about001&orientation=landscape" alt="Kick Off Academy Training" class="about-image">
+</div>
+</div>
+</section>
+<section id="services" class="section">
+<div class="container">
+<h2 class="section-title">Our Training Programs</h2>
+<div class="services-grid">
+<div class="service-card">
+<img src="https://readdy.ai/api/search-image?query=youth%20football%20training%20session%20children%20aged%206-12%20learning%20basic%20skills%20with%20professional%20coach%20on%20grass%20field%20academy%20setting&width=400&height=200&seq=service001&orientation=landscape" alt="Youth Development" class="service-image">
+<div class="service-content">
+<h3 class="service-title">Youth Development (Ages 6-12)</h3>
+<p class="service-description">Foundation skills, fun-based learning, and character development in a supportive environment.</p>
+<div class="service-price">£45/session</div>
+<a href="#booking" class="btn-primary">Book Now</a>
+</div>
+</div>
+<div class="service-card">
+<img src="https://readdy.ai/api/search-image?query=teenage%20football%20players%20intensive%20training%20session%20academy%20level%20coaching%20tactical%20drills%20professional%20development&width=400&height=200&seq=service002&orientation=landscape" alt="Academy Training" class="service-image">
+<div class="service-content">
+<h3 class="service-title">Academy Training (Ages 13-18)</h3>
+<p class="service-description">Advanced technical training, tactical awareness, and pathway to professional football.</p>
+<div class="service-price">£65/session</div>
+<a href="#booking" class="btn-primary">Book Now</a>
+</div>
+</div>
+<div class="service-card">
+<img src="https://readdy.ai/api/search-image?query=adult%20football%20training%20session%20fitness%20conditioning%20and%20skills%20development%20professional%20coaching%20for%20recreational%20players&width=400&height=200&seq=service003&orientation=landscape" alt="Adult Training" class="service-image">
+<div class="service-content">
+<h3 class="service-title">Adult Training (18+)</h3>
+<p class="service-description">Fitness-focused sessions, skill refinement, and competitive match preparation.</p>
+<div class="service-price">£35/session</div>
+<a href="#booking" class="btn-primary">Book Now</a>
+</div>
+</div>
+<div class="service-card">
+<img src="https://readdy.ai/api/search-image?query=one-on-one%20football%20coaching%20session%20personal%20trainer%20working%20with%20individual%20player%20intensive%20skill%20development&width=400&height=200&seq=service004&orientation=landscape" alt="Personal Coaching" class="service-image">
+<div class="service-content">
+<h3 class="service-title">Personal Coaching</h3>
+<p class="service-description">Individualized training programs tailored to specific goals and skill development needs.</p>
+<div class="service-price">£85/session</div>
+<a href="#booking" class="btn-primary">Book Now</a>
+</div>
+</div>
+<div class="service-card">
+<img src="https://readdy.ai/api/search-image?query=football%20goalkeeper%20training%20session%20specialized%20coaching%20gloves%20and%20equipment%20professional%20development%20academy%20setting&width=400&height=200&seq=service005&orientation=landscape" alt="Goalkeeper Training" class="service-image">
+<div class="service-content">
+<h3 class="service-title">Goalkeeper Training</h3>
+<p class="service-description">Specialized goalkeeper coaching focusing on technique, positioning, and shot-stopping skills.</p>
+<div class="service-price">£55/session</div>
+<a href="#booking" class="btn-primary">Book Now</a>
+</div>
+</div>
+<div class="service-card">
+<img src="https://readdy.ai/api/search-image?query=online%20football%20coaching%20session%20virtual%20training%20video%20call%20laptop%20screen%20tactical%20analysis%20digital%20learning%20platform&width=400&height=200&seq=service006&orientation=landscape" alt="Online Coaching" class="service-image">
+<div class="service-content">
+<h3 class="service-title">Online Coaching</h3>
+<p class="service-description">Virtual coaching sessions, tactical analysis, and personalized training programs delivered online.</p>
+<div class="service-price">£25/session</div>
+<a href="#booking" class="btn-primary">Book Now</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="booking" class="section booking-section">
+<div class="container">
+<h2 class="section-title">Book Your Training Session</h2>
+<div class="booking-container">
+<div class="booking-form">
+<h3 style="margin-bottom: 1.5rem; font-size: 1.5rem; font-weight: 600;">Reserve Your Spot</h3>
+<form id="bookingForm">
+<div class="form-group">
+<label class="form-label">Full Name</label>
+<input type="text" class="form-input" required>
+</div>
+<div class="form-group">
+<label class="form-label">Email Address</label>
+<input type="email" class="form-input" required>
+</div>
+<div class="form-group">
+<label class="form-label">Phone Number</label>
+<input type="tel" class="form-input" required>
+</div>
+<div class="form-group">
+<label class="form-label">Training Program</label>
+<select class="form-input" required>
+<option value="">Select a program</option>
+<option value="youth">Youth Development (Ages 6-12)</option>
+<option value="academy">Academy Training (Ages 13-18)</option>
+<option value="adult">Adult Training (18+)</option>
+<option value="personal">Personal Coaching</option>
+<option value="goalkeeper">Goalkeeper Training</option>
+<option value="online">Online Coaching</option>
+</select>
+</div>
+<div class="form-group">
+<label class="form-label">Preferred Date</label>
+<input type="date" class="form-input" required>
+</div>
+<div class="form-group">
+<label class="form-label">Preferred Time</label>
+<select class="form-input" required>
+<option value="">Select time</option>
+<option value="09:00">09:00 AM</option>
+<option value="10:30">10:30 AM</option>
+<option value="12:00">12:00 PM</option>
+<option value="13:30">1:30 PM</option>
+<option value="15:00">3:00 PM</option>
+<option value="16:30">4:30 PM</option>
+<option value="18:00">6:00 PM</option>
+</select>
+</div>
+<div class="form-group">
+<label class="form-label">Additional Notes</label>
+<textarea class="form-input" rows="3" placeholder="Any specific requirements or questions?"></textarea>
+</div>
+<button type="submit" class="btn-primary" style="width: 100%;">Book Session</button>
+</form>
+</div>
+<div class="calendar-widget">
+<h3 style="margin-bottom: 1.5rem; font-size: 1.5rem; font-weight: 600;">Available Dates</h3>
+<div class="calendar-header">
+<button class="calendar-nav" id="prevMonth">‹</button>
+<h4 id="currentMonth">December 2024</h4>
+<button class="calendar-nav" id="nextMonth">›</button>
+</div>
+<div class="calendar-grid" id="calendarGrid">
+<!-- Calendar days will be generated by JavaScript -->
+</div>
+<div style="margin-top: 1.5rem; padding: 1rem; background: #f8fafc; border-radius: 8px;">
+<h4 style="font-size: 1rem; font-weight: 600; margin-bottom: 0.5rem;">Legend:</h4>
+<div style="display: flex; gap: 1rem; font-size: 0.875rem;">
+<span><span style="display: inline-block; width: 12px; height: 12px; background: #dcfce7; border-radius: 2px; margin-right: 0.5rem;"></span>Available</span>
+<span><span style="display: inline-block; width: 12px; height: 12px; background: #dc2626; border-radius: 2px; margin-right: 0.5rem;"></span>Selected</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="blog" class="section">
+<div class="container">
+<h2 class="section-title">Latest News & Tips</h2>
+<div class="blog-grid">
+<article class="blog-card">
+<img src="https://readdy.ai/api/search-image?query=football%20match%20action%20shot%20players%20competing%20for%20ball%20professional%20photography%20sports%20journalism%20style&width=400&height=200&seq=blog001&orientation=landscape" alt="Match Report" class="blog-image">
+<div class="blog-content">
+<span class="blog-category">Match Report</span>
+<h3 class="blog-title">Academy Teams Dominate Regional Championships</h3>
+<p class="blog-excerpt">Our U16 and U18 teams showcased exceptional performance in the regional championships, with both teams advancing to the semi-finals...</p>
+<div class="blog-meta">
+<span>By Coach Martinez</span>
+<span>Dec 8, 2024</span>
+</div>
+</div>
+</article>
+<article class="blog-card">
+<img src="https://readdy.ai/api/search-image?query=football%20training%20drill%20cones%20and%20equipment%20tactical%20setup%20coaching%20methodology%20professional%20development&width=400&height=200&seq=blog002&orientation=landscape" alt="Coaching Tips" class="blog-image">
+<div class="blog-content">
+<span class="blog-category">Coaching Tips</span>
+<h3 class="blog-title">5 Essential Drills for Improving Ball Control</h3>
+<p class="blog-excerpt">Master these fundamental drills to enhance your first touch, close control, and overall ball mastery. Perfect for players of all levels...</p>
+<div class="blog-meta">
+<span>By Coach Thompson</span>
+<span>Dec 5, 2024</span>
+</div>
+</div>
+</article>
+<article class="blog-card">
+<img src="https://readdy.ai/api/search-image?query=football%20academy%20success%20story%20young%20player%20signing%20professional%20contract%20celebration%20moment%20achievement&width=400&height=200&seq=blog003&orientation=landscape" alt="Success Story" class="blog-image">
+<div class="blog-content">
+<span class="blog-category">Success Story</span>
+<h3 class="blog-title">Former Student Signs with Premier League Club</h3>
+<p class="blog-excerpt">James Mitchell, who trained with us for three years, has just signed his first professional contract with Manchester United's youth academy...</p>
+<div class="blog-meta">
+<span>By Academy Staff</span>
+<span>Dec 3, 2024</span>
+</div>
+</div>
+</article>
+<article class="blog-card">
+<img src="https://readdy.ai/api/search-image?query=football%20nutrition%20healthy%20meal%20preparation%20sports%20diet%20athletic%20performance%20fuel%20for%20training&width=400&height=200&seq=blog004&orientation=landscape" alt="Nutrition Guide" class="blog-image">
+<div class="blog-content">
+<span class="blog-category">Nutrition</span>
+<h3 class="blog-title">Nutrition Guide for Young Athletes</h3>
+<p class="blog-excerpt">Proper nutrition is crucial for athletic performance. Learn what to eat before, during, and after training sessions for optimal results...</p>
+<div class="blog-meta">
+<span>By Dr. Sarah Wilson</span>
+<span>Nov 30, 2024</span>
+</div>
+</div>
+</article>
+<article class="blog-card">
+<img src="https://readdy.ai/api/search-image?query=football%20tactical%20analysis%20whiteboard%20strategy%20session%20coach%20explaining%20formations%20and%20positioning&width=400&height=200&seq=blog005&orientation=landscape" alt="Tactical Analysis" class="blog-image">
+<div class="blog-content">
+<span class="blog-category">Tactics</span>
+<h3 class="blog-title">Understanding Modern Football Formations</h3>
+<p class="blog-excerpt">A comprehensive breakdown of contemporary football formations and how they influence team dynamics and player positioning...</p>
+<div class="blog-meta">
+<span>By Coach Rodriguez</span>
+<span>Nov 28, 2024</span>
+</div>
+</div>
+</article>
+<article class="blog-card">
+<img src="https://readdy.ai/api/search-image?query=football%20injury%20prevention%20stretching%20exercises%20warm%20up%20routine%20athletic%20training%20safety%20measures&width=400&height=200&seq=blog006&orientation=landscape" alt="Injury Prevention" class="blog-image">
+<div class="blog-content">
+<span class="blog-category">Health & Safety</span>
+<h3 class="blog-title">Injury Prevention for Football Players</h3>
+<p class="blog-excerpt">Essential warm-up routines, strengthening exercises, and recovery techniques to keep players healthy and on the field...</p>
+<div class="blog-meta">
+<span>By Physio Team</span>
+<span>Nov 25, 2024</span>
+</div>
+</div>
+</article>
+</div>
+</div>
+</section>
+<section id="shop" class="section">
+<div class="container">
+<h2 class="section-title">Kick Off Shop</h2>
+<div class="shop-grid">
+<div class="product-card">
+<img src="https://readdy.ai/api/search-image?query=red%20football%20academy%20training%20jersey%20modern%20design%20with%20logo%20professional%20sports%20apparel%20high%20quality%20fabric&width=300&height=250&seq=product001&orientation=squarish" alt="Training Jersey" class="product-image">
+<div class="product-content">
+<h3 class="product-title">Official Training Jersey</h3>
+<div class="product-price">£35.00</div>
+<button class="btn-primary" style="width: 100%;">Add to Cart</button>
+</div>
+</div>
+<div class="product-card">
+<img src="https://readdy.ai/api/search-image?query=black%20football%20training%20shorts%20academy%20logo%20professional%20athletic%20wear%20comfortable%20sports%20clothing&width=300&height=250&seq=product002&orientation=squarish" alt="Training Shorts" class="product-image">
+<div class="product-content">
+<h3 class="product-title">Training Shorts</h3>
+<div class="product-price">£22.00</div>
+<button class="btn-primary" style="width: 100%;">Add to Cart</button>
+</div>
+</div>
+<div class="product-card">
+<img src="https://readdy.ai/api/search-image?query=white%20football%20socks%20academy%20colors%20professional%20sports%20socks%20athletic%20wear%20comfortable%20training%20gear&width=300&height=250&seq=product003&orientation=squarish" alt="Training Socks" class="product-image">
+<div class="product-content">
+<h3 class="product-title">Training Socks</h3>
+<div class="product-price">£12.00</div>
+<button class="btn-primary" style="width: 100%;">Add to Cart</button>
+</div>
+</div>
+<div class="product-card">
+<img src="https://readdy.ai/api/search-image?query=red%20football%20academy%20tracksuit%20jacket%20modern%20design%20professional%20sports%20apparel%20training%20wear%20comfortable&width=300&height=250&seq=product004&orientation=squarish" alt="Academy Tracksuit" class="product-image">
+<div class="product-content">
+<h3 class="product-title">Academy Tracksuit</h3>
+<div class="product-price">£65.00</div>
+<button class="btn-primary" style="width: 100%;">Add to Cart</button>
+</div>
+</div>
+<div class="product-card">
+<img src="https://readdy.ai/api/search-image?query=professional%20football%20boots%20modern%20design%20black%20and%20red%20colors%20high%20performance%20sports%20footwear%20training%20equipment&width=300&height=250&seq=product005&orientation=squarish" alt="Training Boots" class="product-image">
+<div class="product-content">
+<h3 class="product-title">Training Boots</h3>
+<div class="product-price">£85.00</div>
+<button class="btn-primary" style="width: 100%;">Add to Cart</button>
+</div>
+</div>
+<div class="product-card">
+<img src="https://readdy.ai/api/search-image?query=red%20sports%20water%20bottle%20academy%20logo%20professional%20athletic%20hydration%20equipment%20training%20accessories&width=300&height=250&seq=product006&orientation=squarish" alt="Water Bottle" class="product-image">
+<div class="product-content">
+<h3 class="product-title">Academy Water Bottle</h3>
+<div class="product-price">£15.00</div>
+<button class="btn-primary" style="width: 100%;">Add to Cart</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="testimonials" class="section">
+<div class="container">
+<h2 class="section-title">Success Stories</h2>
+<div class="testimonials-grid">
+<div class="testimonial-card">
+<img src="https://readdy.ai/api/search-image?query=young%20male%20football%20player%20portrait%20smiling%20confident%20academy%20student%20successful%20athlete%20professional%20headshot&width=160&height=160&seq=testimonial001&orientation=squarish" alt="Marcus Johnson" class="testimonial-avatar">
+<p class="testimonial-quote">"Kick Off Academy transformed my game completely. The coaches here don't just teach technique, they develop champions. I've improved more in 6 months here than in 2 years elsewhere."</p>
+<div class="testimonial-author">Marcus Johnson</div>
+<div class="testimonial-role">Academy Graduate, Now at Chelsea Youth</div>
+</div>
+<div class="testimonial-card">
+<img src="https://readdy.ai/api/search-image?query=teenage%20female%20football%20player%20portrait%20confident%20smile%20academy%20student%20successful%20young%20athlete%20professional%20headshot&width=160&height=160&seq=testimonial002&orientation=squarish" alt="Emma Rodriguez" class="testimonial-avatar">
+<p class="testimonial-quote">"The personalized training approach here is incredible. My coaches identified my strengths and helped me develop them while addressing my weaknesses. I've never felt more confident on the pitch."</p>
+<div class="testimonial-author">Emma Rodriguez</div>
+<div class="testimonial-role">U18 Women's Team Captain</div>
+</div>
+<div class="testimonial-card">
+<img src="https://readdy.ai/api/search-image?query=adult%20male%20football%20player%20portrait%20happy%20satisfied%20recreational%20player%20academy%20training%20success%20story%20professional%20headshot&width=160&height=160&seq=testimonial003&orientation=squarish" alt="David Thompson" class="testimonial-avatar">
+<p class="testimonial-quote">"As an adult returning to football, I was nervous about joining. The coaches made me feel welcome and helped me regain my fitness and skills. It's been an amazing journey."</p>
+<div class="testimonial-author">David Thompson</div>
+<div class="testimonial-role">Adult Training Program</div>
+</div>
+<div class="testimonial-card">
+<img src="https://readdy.ai/api/search-image?query=young%20boy%20football%20player%20portrait%20excited%20happy%20child%20academy%20student%20youth%20development%20success%20story%20professional%20headshot&width=160&height=160&seq=testimonial004&orientation=squarish" alt="Oliver Chen" class="testimonial-avatar">
+<p class="testimonial-quote">"I love coming to training every week! The coaches make it so fun and I've learned so many new skills. My friends at school are amazed at how much better I've gotten."</p>
+<div class="testimonial-author">Oliver Chen</div>
+<div class="testimonial-role">Youth Development Program, Age 10</div>
+</div>
+<div class="testimonial-card">
+<img src="https://readdy.ai/api/search-image?query=middle%20aged%20woman%20parent%20portrait%20satisfied%20happy%20mother%20academy%20parent%20testimonial%20professional%20headshot&width=160&height=160&seq=testimonial005&orientation=squarish" alt="Sarah Mitchell" class="testimonial-avatar">
+<p class="testimonial-quote">"My son has been training here for two years and the development is remarkable. Not just in football skills, but in confidence, teamwork, and discipline. Highly recommend!"</p>
+<div class="testimonial-author">Sarah Mitchell</div>
+<div class="testimonial-role">Parent of Academy Student</div>
+</div>
+<div class="testimonial-card">
+<img src="https://readdy.ai/api/search-image?query=teenage%20male%20goalkeeper%20portrait%20confident%20young%20athlete%20academy%20student%20specialized%20training%20success%20story%20professional%20headshot&width=160&height=160&seq=testimonial006&orientation=squarish" alt="Jake Williams" class="testimonial-avatar">
+<p class="testimonial-quote">"The goalkeeper-specific training here is world-class. Coach Anderson has helped me develop techniques I never knew existed. I'm now the first-choice keeper for my school team."</p>
+<div class="testimonial-author">Jake Williams</div>
+<div class="testimonial-role">Goalkeeper Training Program</div>
+</div>
+</div>
+</div>
+</section>
+<section id="contact" class="section contact-section">
+<div class="container">
+<h2 class="section-title">Get In Touch</h2>
+<div class="contact-grid">
+<div class="contact-info">
+<div class="contact-item">
+<div class="contact-icon">
+<i class="ri-map-pin-line"></i>
+</div>
+<div>
+<h4 style="font-weight: 600; margin-bottom: 0.5rem;">Visit Our Academy</h4>
+<p>123 Champions Way, Football District<br>Manchester, M1 2AB, United Kingdom</p>
+</div>
+</div>
+<div class="contact-item">
+<div class="contact-icon">
+<i class="ri-phone-line"></i>
+</div>
+<div>
+<h4 style="font-weight: 600; margin-bottom: 0.5rem;">Call Us</h4>
+<p>+44 161 123 4567<br>Mon-Fri: 9AM-6PM, Sat-Sun: 9AM-4PM</p>
+</div>
+</div>
+<div class="contact-item">
+<div class="contact-icon">
+<i class="ri-mail-line"></i>
+</div>
+<div>
+<h4 style="font-weight: 600; margin-bottom: 0.5rem;">Email Us</h4>
+<p>info@kickoffacademy.co.uk<br>bookings@kickoffacademy.co.uk</p>
+</div>
+</div>
+<div class="contact-item">
+<div class="contact-icon">
+<i class="ri-time-line"></i>
+</div>
+<div>
+<h4 style="font-weight: 600; margin-bottom: 0.5rem;">Training Hours</h4>
+<p>Weekdays: 4PM-8PM<br>Weekends: 9AM-5PM</p>
+</div>
+</div>
+</div>
+<div class="contact-form">
+<h3 style="margin-bottom: 1.5rem; font-size: 1.5rem; font-weight: 600;">Send us a Message</h3>
+<form id="contactForm">
+<div class="form-group">
+<label class="form-label">Your Name</label>
+<input type="text" class="form-input" required>
+</div>
+<div class="form-group">
+<label class="form-label">Email Address</label>
+<input type="email" class="form-input" required>
+</div>
+<div class="form-group">
+<label class="form-label">Subject</label>
+<select class="form-input" required>
+<option value="">Select a subject</option>
+<option value="booking">Booking Inquiry</option>
+<option value="programs">Program Information</option>
+<option value="facilities">Facility Tour</option>
+<option value="partnership">Partnership Opportunities</option>
+<option value="other">Other</option>
+</select>
+</div>
+<div class="form-group">
+<label class="form-label">Message</label>
+<textarea class="form-input" rows="5" placeholder="Tell us how we can help you..." required></textarea>
+</div>
+<button type="submit" class="btn-primary" style="width: 100%;">Send Message</button>
+</form>
+</div>
+</div>
+</div>
+</section>
+<footer class="footer">
+<div class="container">
+<div class="footer-grid">
+<div class="footer-section">
+<div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;">
+<div style="width: 150px; height: 80px; background: url('https://i.postimg.cc/Wb1tqnTP/KICK-OFF.jpg') center/cover no-repeat; border-radius: 0%;"></div>
+<div>
+<h4 style="color: #dc2626; margin: 0; font-size: 1.5rem; font-weight: 800;">KICK OFF</h4>
+<p style="color: #cbd5e0; margin: 0; font-size: 0.875rem; font-weight: 500;">ENGLAND FOOTBALL COACHING</p>
+</div>
+</div>
+<p style="color: #cbd5e0; margin-bottom: 1rem; line-height: 1.6; font-size: 0.875rem;">Professional technical football coaching using futsal and street football techniques for ages 2 - 23 years.</p>
+<p style="color: #9ca3af; font-size: 0.75rem; margin-bottom: 1rem; line-height: 1.4;">DBS Checked • Insured • Professional • Experienced • Proven Success</p>
+<div style="display: flex; gap: 0.75rem; margin-top: 1rem;">
+<a href="#" class="social-link" style="background: #1877f2;"><i class="ri-facebook-fill"></i></a>
+<a href="#" class="social-link" style="background: #1da1f2;"><i class="ri-twitter-fill"></i></a>
+<a href="#" class="social-link" style="background: #e4405f;"><i class="ri-instagram-fill"></i></a>
+<a href="#" class="social-link" style="background: #0077b5;"><i class="ri-linkedin-fill"></i></a>
+</div>
+</div>
+<div class="footer-section">
+<h4 style="color: #dc2626; font-size: 1rem; font-weight: 700; margin-bottom: 1rem;">QUICK LINKS</h4>
+<ul class="footer-links">
+<li><a href="#about" style="font-size: 0.875rem;">Home</a></li>
+<li><a href="#about" style="font-size: 0.875rem;">About Us</a></li>
+<li><a href="#services" style="font-size: 0.875rem;">Our Programs</a></li>
+<li><a href="#testimonials" style="font-size: 0.875rem;">Success Stories</a></li>
+<li><a href="#blog" style="font-size: 0.875rem;">News & Tips</a></li>
+<li><a href="#contact" style="font-size: 0.875rem;">Contact Us</a></li>
+</ul>
+</div>
+<div class="footer-section">
+<h4 style="color: #dc2626; font-size: 1rem; font-weight: 700; margin-bottom: 1rem;">OUR SERVICES</h4>
+<ul class="footer-links">
+<li><a href="#services" style="font-size: 0.875rem;">Little Kicks (Ages 2-5)</a></li>
+<li><a href="#services" style="font-size: 0.875rem;">Youth Academy (Ages 6-12)</a></li>
+<li><a href="#services" style="font-size: 0.875rem;">Elite Training (Ages 13-17)</a></li>
+<li><a href="#services" style="font-size: 0.875rem;">Pro Development (Ages 18-23)</a></li>
+<li><a href="#services" style="font-size: 0.875rem;">Personal Coaching</a></li>
+<li><a href="#services" style="font-size: 0.875rem;">Holiday Camps</a></li>
+</ul>
+</div>
+<div class="footer-section">
+<h4 style="color: #dc2626; font-size: 1rem; font-weight: 700; margin-bottom: 1rem;">CONTACT INFO</h4>
+<div style="margin-bottom: 1.5rem;">
+<div style="display: flex; align-items: flex-start; gap: 0.75rem; margin-bottom: 0.75rem;">
+<i class="ri-phone-fill" style="color: #dc2626; margin-top: 0.1rem; font-size: 1rem;"></i>
+<div>
+<p style="color: #fff; margin: 0; font-weight: 600; font-size: 0.875rem;">07858 510 085</p>
+<p style="color: #9ca3af; margin: 0; font-size: 0.75rem;">Mon-Fri: 9AM-6PM</p>
+</div>
+</div>
+<div style="display: flex; align-items: flex-start; gap: 0.75rem; margin-bottom: 0.75rem;">
+<i class="ri-mail-fill" style="color: #dc2626; margin-top: 0.1rem; font-size: 1rem;"></i>
+<div>
+<p style="color: #fff; margin: 0; font-weight: 600; font-size: 0.875rem;">coach@kickofffootball.co.uk</p>
+<p style="color: #9ca3af; margin: 0; font-size: 0.75rem;">Quick response guaranteed</p>
+</div>
+</div>
+<div style="display: flex; align-items: flex-start; gap: 0.75rem; margin-bottom: 1rem;">
+<i class="ri-map-pin-fill" style="color: #dc2626; margin-top: 0.1rem; font-size: 1rem;"></i>
+<div>
+<p style="color: #fff; margin: 0; font-weight: 600; font-size: 0.875rem;">Surrey & Sussex</p>
+<p style="color: #9ca3af; margin: 0; font-size: 0.75rem;">Multiple training locations</p>
+</div>
+</div>
+</div>
+<button class="btn-primary" style="background: #dc2626; padding: 0.875rem 1.75rem; font-size: 0.875rem; font-weight: 700; letter-spacing: 0.025em; width: 100%; border-radius: 8px;">BOOK FREE TASTER SESSION</button>
+</div>
+</div>
+<div class="footer-bottom" style="border-top: 1px solid #374151; padding-top: 1.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+<p style="color: #9ca3af; font-size: 0.875rem; margin: 0;">&copy; 2025 KICK OFF England Football Coaching. All rights reserved.</p>
+<div style="display: flex; gap: 1.5rem;">
+<a href="#" style="color: #9ca3af; text-decoration: none; font-size: 0.875rem; transition: color 0.3s ease;">Privacy Policy</a>
+<a href="#" style="color: #9ca3af; text-decoration: none; font-size: 0.875rem; transition: color 0.3s ease;">Terms of Service</a>
+<a href="#" style="color: #9ca3af; text-decoration: none; font-size: 0.875rem; transition: color 0.3s ease;">Cookie Policy</a>
+</div>
+</div>
+</div>
+</footer>
+<a href="https://wa.me/441611234567" class="whatsapp-btn" target="_blank">
+<i class="ri-whatsapp-line"></i>
+</a>
+<script id="mobile-menu-script">
+document.addEventListener('DOMContentLoaded', function() {
+const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+const navMenu = document.getElementById('navMenu');
+if (mobileMenuBtn && navMenu) {
+mobileMenuBtn.addEventListener('click', function() {
+navMenu.classList.toggle('active');
+});
+document.addEventListener('click', function(e) {
+if (!navMenu.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+navMenu.classList.remove('active');
+}
+});
+}
+});
+</script>
+<script id="rotating-banner-script">
+document.addEventListener('DOMContentLoaded', function() {
+const banners = [
+"Professional Coaching • Modern Facilities • Proven Results",
+"Expert Training • Championship Mindset • Future Stars",
+"Technical Excellence • Tactical Awareness • Character Development",
+"FIFA Standard Pitches • Video Analysis • Performance Tracking"
+];
+let currentBanner = 0;
+const bannerElement = document.getElementById('rotatingBanner');
+if (bannerElement) {
+bannerElement.style.transition = 'opacity 0.3s ease';
+function rotateBanner() {
+bannerElement.style.opacity = '0';
+setTimeout(function() {
+currentBanner = (currentBanner + 1) % banners.length;
+bannerElement.textContent = banners[currentBanner];
+bannerElement.style.opacity = '1';
+}, 300);
+}
+setInterval(rotateBanner, 4000);
+}
+});
+</script>
+<script id="calendar-script">
+document.addEventListener('DOMContentLoaded', function() {
+const calendarGrid = document.getElementById('calendarGrid');
+const currentMonthElement = document.getElementById('currentMonth');
+const prevMonthBtn = document.getElementById('prevMonth');
+const nextMonthBtn = document.getElementById('nextMonth');
+if (!calendarGrid || !currentMonthElement || !prevMonthBtn || !nextMonthBtn) {
+return;
+}
+let currentDate = new Date();
+let selectedDate = null;
+const months = [
+'January', 'February', 'March', 'April', 'May', 'June',
+'July', 'August', 'September', 'October', 'November', 'December'
+];
+const availableDates = [
+'2024-12-15', '2024-12-16', '2024-12-18', '2024-12-20', '2024-12-22', '2024-12-23',
+'2025-01-05', '2025-01-08', '2025-01-10', '2025-01-12', '2025-01-15', '2025-01-18'
+];
+function generateCalendar(year, month) {
+const firstDay = new Date(year, month, 1);
+const lastDay = new Date(year, month + 1, 0);
+const daysInMonth = lastDay.getDate();
+const startingDayOfWeek = firstDay.getDay();
+currentMonthElement.textContent = months[month] + ' ' + year;
+calendarGrid.innerHTML = '';
+const dayHeaders = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+dayHeaders.forEach(function(day) {
+const dayHeader = document.createElement('div');
+dayHeader.textContent = day;
+dayHeader.style.fontWeight = '600';
+dayHeader.style.textAlign = 'center';
+dayHeader.style.padding = '0.5rem';
+dayHeader.style.color = '#718096';
+calendarGrid.appendChild(dayHeader);
+});
+for (let i = 0; i < startingDayOfWeek; i++) {
+const emptyDay = document.createElement('div');
+calendarGrid.appendChild(emptyDay);
+}
+for (let day = 1; day <= daysInMonth; day++) {
+const dayElement = document.createElement('div');
+dayElement.textContent = day;
+dayElement.className = 'calendar-day';
+const monthStr = String(month + 1).padStart(2, '0');
+const dayStr = String(day).padStart(2, '0');
+const dateString = year + '-' + monthStr + '-' + dayStr;
+if (availableDates.includes(dateString)) {
+dayElement.classList.add('available');
+}
+if (selectedDate === dateString) {
+dayElement.classList.add('selected');
+}
+dayElement.addEventListener('click', function() {
+if (availableDates.includes(dateString)) {
+const selectedElements = document.querySelectorAll('.calendar-day.selected');
+selectedElements.forEach(function(el) {
+el.classList.remove('selected');
+});
+dayElement.classList.add('selected');
+selectedDate = dateString;
+}
+});
+calendarGrid.appendChild(dayElement);
+}
+}
+prevMonthBtn.addEventListener('click', function() {
+currentDate.setMonth(currentDate.getMonth() - 1);
+generateCalendar(currentDate.getFullYear(), currentDate.getMonth());
+});
+nextMonthBtn.addEventListener('click', function() {
+currentDate.setMonth(currentDate.getMonth() + 1);
+generateCalendar(currentDate.getFullYear(), currentDate.getMonth());
+});
+generateCalendar(currentDate.getFullYear(), currentDate.getMonth());
+});
+</script>
+<script id="forms-script">
+document.addEventListener('DOMContentLoaded', function() {
+const bookingForm = document.getElementById('bookingForm');
+const contactForm = document.getElementById('contactForm');
+if (bookingForm) {
+bookingForm.addEventListener('submit', function(e) {
+e.preventDefault();
+showNotification('Booking request submitted successfully! We will contact you shortly to confirm your session.');
+bookingForm.reset();
+});
+}
+if (contactForm) {
+contactForm.addEventListener('submit', function(e) {
+e.preventDefault();
+showNotification('Message sent successfully! We will get back to you within 24 hours.');
+contactForm.reset();
+});
+}
+const addToCartButtons = document.querySelectorAll('.btn-primary');
+addToCartButtons.forEach(function(button) {
+if (button.textContent === 'Add to Cart') {
+button.addEventListener('click', function() {
+showNotification('Item added to cart! Continue shopping or proceed to checkout.');
+});
+}
+});
+function showNotification(message) {
+const notification = document.createElement('div');
+notification.textContent = message;
+notification.style.position = 'fixed';
+notification.style.top = '20px';
+notification.style.right = '20px';
+notification.style.background = '#dc2626';
+notification.style.color = 'white';
+notification.style.padding = '1rem';
+notification.style.borderRadius = '8px';
+notification.style.zIndex = '10000';
+notification.style.maxWidth = '400px';
+document.body.appendChild(notification);
+setTimeout(function() {
+document.body.removeChild(notification);
+}, 3000);
+}
+});
+</script>
+<script id="smooth-scroll-script">
+document.addEventListener('DOMContentLoaded', function() {
+const navLinks = document.querySelectorAll('.nav-link[href^="#"]');
+navLinks.forEach(function(link) {
+link.addEventListener('click', function(e) {
+e.preventDefault();
+const targetId = this.getAttribute('href').substring(1);
+const targetElement = document.getElementById(targetId);
+if (targetElement) {
+const header = document.querySelector('.header');
+const headerHeight = header ? header.offsetHeight : 0;
+const targetPosition = targetElement.offsetTop - headerHeight;
+window.scrollTo({
+top: targetPosition,
+behavior: 'smooth'
+});
+const navMenu = document.getElementById('navMenu');
+if (navMenu) {
+navMenu.classList.remove('active');
+}
+}
+});
+});
+});
+</script>
+<script>
+    !function (t, e) { var o, n, p, r; e.__SV || (window.posthog = e, e._i = [], e.init = function (i, s, a) { function g(t, e) { var o = e.split("."); 2 == o.length && (t = t[o[0]], e = o[1]), t[e] = function () { t.push([e].concat(Array.prototype.slice.call(arguments, 0))) } } (p = t.createElement("script")).type = "text/javascript", p.crossOrigin = "anonymous", p.async = !0, p.src = s.api_host.replace(".i.posthog.com", "-assets.i.posthog.com") + "/static/array.js", (r = t.getElementsByTagName("script")[0]).parentNode.insertBefore(p, r); var u = e; for (void 0 !== a ? u = e[a] = [] : a = "posthog", u.people = u.people || [], u.toString = function (t) { var e = "posthog"; return "posthog" !== a && (e += "." + a), t || (e += " (stub)"), e }, u.people.toString = function () { return u.toString(1) + ".people (stub)" }, o = "init capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey getNextSurveyStep identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty createPersonProfile opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing debug".split(" "), n = 0; n < o.length; n++)g(u, o[n]); e._i.push([i, s, a]) }, e.__SV = 1) }(document, window.posthog || []);
+    posthog.init('phc_t9tkQZJiyi2ps9zUYm8TDsL6qXo4YmZx0Ot5rBlAlEd', {
+        api_host: 'https://us.i.posthog.com',
+        autocapture: false,
+        capture_pageview: false,
+        capture_pageleave: false,
+        capture_performance: {
+            web_vitals: false,
+        },
+        rageclick: false,
+    })
+    
+</script>
+
+</body>
+</html>
